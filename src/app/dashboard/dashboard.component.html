@@ -1,0 +1,99 @@
+<div class="wrapper">
+    <app-drawer  *ngIf="configuracaoCompleta"></app-drawer>    
+    <div id="content" class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                        <div class="row">
+                            <div class="col-12" style="display: inline-flex">
+                                <nav aria-label="breadcrumb float-end">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Cadastro</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Empresa</li>
+                                    </ol>
+                                </nav>
+                                <div style="width: 50px;"></div>
+                                <img src="https://placehold.co/10" alt="Avatar" class="avatar">
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <br>
+            <div class="row align-items-center">
+                <div *ngIf="cadastroCompleto === false && !configuracaoCompleta" class="justify-content-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="configure-area">
+                                        <h3 style="font-weight: normal;">Olá <strong>{{ nomeCompleto }}</strong>. Seja bem-vindo.</h3>
+                                        <p>É necessário configurar a empresa matriz para visualizar todas as informações do sistema</p>
+                                        <button class="btn btn-outline-info" (click)="startConfig()">INICIAR CONFIGURAÇÃO</button>
+                                    </div>
+                                </div>
+                                <div class="col-6" style="background-image: url(https://picsum.photos/600/50); background-repeat: no-repeat; height: 400px !important">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div *ngIf="configuracaoCompleta">
+                <div class="secao-crud">
+                    <button type="button" class="btn btn-outline-primary ms-1" (click)="editar()">Editar Empresa</button>
+                    <button type="button" class="btn btn-outline-primary ms-1" (click)="editar()">Gestão de filiais</button>
+                    <button type="button" class="btn btn-outline-primary ms-1" (click)="editar()">Faixas Salariais</button>
+                    <button type="button" class="btn btn-outline-primary ms-1" (click)="editar()">Job Level</button>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Dados da Empresa</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p><strong>Nome da Empresa:</strong> {{ nomeEmpresa }}</p>
+                                <p><strong>CPF do Administrador:</strong> {{ cpf }}</p>
+                                <p><strong>CEP:</strong> {{ cep }}</p>
+
+                            </div>
+                            <div class="col-md-3">
+                                <p><strong>CNPJ da Empresa:</strong> {{ cnpj }}</p>
+                                <p><strong>E-Mail do Administrador:</strong> {{ cnpj }}</p>
+                                <p><strong>Endereço:</strong> {{ endereco }}, {{ complemento }}, {{ bairro }}, {{ cidade }} - {{ estado }}</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <p><strong>Nome do Administrador:</strong> {{ nomeAdministrador }}</p>
+                                <p><strong>Telefone:</strong> {{ celular }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>

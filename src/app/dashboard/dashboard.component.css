@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    background-color: #f0f0f0;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+   .avatar {
+       vertical-align: middle;
+       width: 40px;
+       height: 40px;
+       border-radius: 50%;
+   }
